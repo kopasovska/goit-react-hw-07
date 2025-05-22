@@ -4,7 +4,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import * as Yup from 'yup';
 import { useId } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsSlice';
+import { addDataThunk } from '../../redux/operations';
 
 
 const ContactForm = () => {
@@ -13,7 +13,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(addContact({
+    dispatch(addDataThunk({
       id: nanoid(), 
       name: values.name,
       phone: values.number,
