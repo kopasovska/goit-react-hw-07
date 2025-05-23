@@ -1,13 +1,13 @@
 import { useDispatch } from 'react-redux';
 import css from './Contact.module.css';
 import { FaUser, FaPhone } from 'react-icons/fa';
-import { deleteDataThunk } from '../../redux/operations';
+import { deleteContact } from '../../redux/contactsOps';
 
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
 
-  const handleDelete = () => dispatch(deleteDataThunk(contact.id));
+  const handleDelete = () => dispatch(deleteContact(contact.id));
 
   return (
     <li className={css.contactItem}>
